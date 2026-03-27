@@ -1,0 +1,134 @@
+/* Modern Resume CSS */
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #2a3b4d;
+  --muted: #6b7c93;
+  --accent: #3f85ff;
+  --accent-soft: rgba(63, 133, 255, 0.12);
+  --border: #e2e8f0;
+  --shadow: 0 20px 45px rgba(42, 59, 77, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top left, #edf4ff, var(--bg));
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  color: #223a67;
+}
+
+header p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin: 0.65rem auto 0;
+  max-width: 640px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 55px rgba(42, 59, 77, 0.16);
+}
+
+.card-body {
+  padding: 1.35rem;
+}
+
+.card-title {
+  color: #1f4f97;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+h5.text-primary {
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+p, li {
+  color: var(--text);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+.badge {
+  background: var(--accent-soft);
+  color: #1f4f97;
+  font-weight: 600;
+  border-radius: 0.85rem;
+  padding: 0.45rem 0.75rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.typing-effect::after {
+  content: "|";
+  display: inline-block;
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 1.5rem 0.8rem 2rem;
+  }
+
+  .row {
+    gap: 1rem;
+  }
+
+  .card {
+    border-radius: 0.85rem;
+  }
+}
